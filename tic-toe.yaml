@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: tic-toe
+  name: tic-toe
+  namespace: anil
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tic-toe
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: tic-toe
+    spec:
+      containers:
+      - image: anilkumarkolla10/tic:v01
+        name: tic-toe
+        ports:
+        - containerPort: 3000
